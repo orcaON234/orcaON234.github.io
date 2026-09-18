@@ -1,0 +1,36 @@
+# Normalise line endings in the repository, independent of each machine's
+# core.autocrlf setting. Without this, a clone on Linux/macOS and a clone on
+# Windows can disagree about line endings and produce noisy, meaningless diffs.
+#
+# `text=auto` means: store LF in the repository, check out the platform-native
+# ending in the working tree. This also silences the
+# "LF will be replaced by CRLF" warnings on `git add`.
+* text=auto
+
+# Explicitly text (belt and braces — these are all authored content)
+*.html   text
+*.css    text
+*.js     text
+*.md     text
+*.json   text
+*.yml    text
+*.yaml   text
+*.txt    text
+*.svg    text
+
+# Never touch binary assets. Git will not try to diff or convert these.
+*.png    binary
+*.jpg    binary
+*.jpeg   binary
+*.gif    binary
+*.webp   binary
+*.ico    binary
+*.pdf    binary
+*.woff   binary
+*.woff2  binary
+
+# GitHub Pages needs this file to exist; it is empty and content-agnostic.
+.nojekyll text eol=lf
+
+# Keep shell scripts LF so they remain runnable if you ever add any.
+*.sh     text eol=lf
