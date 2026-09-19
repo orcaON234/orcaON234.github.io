@@ -65,10 +65,8 @@
       <nav class="primary-nav" id="primary-nav" aria-label="Primary">
         <ul class="nav-list">
           <li><a class="nav-link" href="#about">About</a></li>
-          <li><a class="nav-link" href="#skills">Skills</a></li>
+          <li><a class="nav-link" href="#skills">Tech Stack</a></li>
           <li><a class="nav-link" href="#projects">Projects</a></li>
-          <li><a class="nav-link" href="#experience">Experience</a></li>
-          <li><a class="nav-link" href="#education">Education</a></li>
           <li><a class="nav-link nav-link--cta" href="#contact">Contact</a></li>
         </ul>
       </nav>
@@ -144,7 +142,7 @@
         <header class="section-header">
           <p class="section-kicker">01</p>
           <h2 class="section-title" id="about-heading">About</h2>
-          <p class="section-lede">[Add: a one-line framing for this section.]</p>
+          <p class="section-lede">[Add: what this page covers — and what lives on your résumé instead.]</p>
         </header>
 
         <div class="about-grid">
@@ -159,10 +157,6 @@
           <aside class="about-facts" aria-label="Quick facts">
             <h3 class="about-facts-title">Quick facts</h3>
             <dl class="fact-list">
-              <div class="fact">
-                <dt>Based in</dt>
-                <dd>[Add: city, region]</dd>
-              </div>
               <div class="fact">
                 <dt>Studying</dt>
                 <dd>[Add: degree, institution]</dd>
@@ -179,6 +173,12 @@
                 <dt>Languages</dt>
                 <dd>[Add: spoken languages]</dd>
               </div>
+              <!-- This page deliberately skips work history and coursework —
+                   those live on the resume. Point visitors there instead. -->
+              <div class="fact">
+                <dt>Full history</dt>
+                <dd><a href="assets/Ocean-Ng-Resume.pdf" download>See résumé (PDF)</a></dd>
+              </div>
             </dl>
           </aside>
         </div>
@@ -194,8 +194,8 @@
       <div class="container">
         <header class="section-header">
           <p class="section-kicker">02</p>
-          <h2 class="section-title" id="skills-heading">Technical Skills</h2>
-          <p class="section-lede">[Add: how you group and describe your stack.]</p>
+          <h2 class="section-title" id="skills-heading">Tech Stack</h2>
+          <p class="section-lede">[Add: how you would describe your stack at a glance.]</p>
         </header>
 
         <!-- Populated by JS. Each group is editable in assets/js/main.js → SKILL_GROUPS -->
@@ -279,115 +279,12 @@
     </section>
 
     <!-- ============================================================
-         EXPERIENCE
-         ============================================================ -->
-    <section class="section section--alt" id="experience" aria-labelledby="experience-heading">
-      <div class="container">
-        <header class="section-header">
-          <p class="section-kicker">04</p>
-          <h2 class="section-title" id="experience-heading">Experience</h2>
-          <p class="section-lede">[Add: one line on the arc of your experience.]</p>
-        </header>
-
-        <ol class="timeline">
-          <li class="timeline-item">
-            <div class="timeline-marker" aria-hidden="true"></div>
-            <div class="timeline-body">
-              <header class="entry-head">
-                <h3 class="entry-title">[Add: job title]</h3>
-                <p class="entry-org">[Add: company · location]</p>
-                <p class="entry-dates">[Add: month year – month year]</p>
-              </header>
-              <ul class="entry-points">
-                <li>[Add: what you built, and the technology you used.]</li>
-                <li>[Add: the measurable outcome — latency, accuracy, revenue, users, time saved.]</li>
-                <li>[Add: scope or collaboration — team size, ownership, cross-functional work.]</li>
-              </ul>
-              <ul class="tag-list">
-                <li class="tag">[Add: tech]</li>
-              </ul>
-            </div>
-          </li>
-
-          <li class="timeline-item">
-            <div class="timeline-marker" aria-hidden="true"></div>
-            <div class="timeline-body">
-              <header class="entry-head">
-                <h3 class="entry-title">[Add: job title]</h3>
-                <p class="entry-org">[Add: company · location]</p>
-                <p class="entry-dates">[Add: month year – month year]</p>
-              </header>
-              <ul class="entry-points">
-                <li>[Add: responsibility or shipped feature.]</li>
-                <li>[Add: impact with a number attached.]</li>
-              </ul>
-              <ul class="tag-list">
-                <li class="tag">[Add: tech]</li>
-              </ul>
-            </div>
-          </li>
-
-          <!-- Duplicate an <li class="timeline-item"> block per role -->
-        </ol>
-      </div>
-    </section>
-
-    <!-- ============================================================
-         EDUCATION
-         ============================================================ -->
-    <section class="section" id="education" aria-labelledby="education-heading">
-      <div class="container">
-        <header class="section-header">
-          <p class="section-kicker">05</p>
-          <h2 class="section-title" id="education-heading">Education</h2>
-          <p class="section-lede">[Add: a line on your academic focus.]</p>
-        </header>
-
-        <div class="education-grid">
-          <article class="card education-card">
-            <header class="entry-head">
-              <h3 class="entry-title">[Add: degree name]</h3>
-              <p class="entry-org">[Add: institution]</p>
-              <p class="entry-dates">[Add: start – end]</p>
-            </header>
-            <dl class="fact-list fact-list--compact">
-              <div class="fact">
-                <dt>GPA</dt>
-                <dd>[Add: GPA]</dd>
-              </div>
-              <div class="fact">
-                <dt>Honors</dt>
-                <dd>[Add: honors and awards]</dd>
-              </div>
-            </dl>
-            <h4 class="subheading">Relevant coursework</h4>
-            <ul class="tag-list">
-              <li class="tag">[Add: course]</li>
-              <li class="tag">[Add: course]</li>
-              <li class="tag">[Add: course]</li>
-            </ul>
-          </article>
-
-          <article class="card education-card">
-            <header class="entry-head">
-              <h3 class="entry-title">Certifications &amp; continued learning</h3>
-            </header>
-            <ul class="entry-points">
-              <li>[Add: certification or course]</li>
-              <li>[Add: certification or course]</li>
-            </ul>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================================================
          CONTACT
          ============================================================ -->
     <section class="section section--alt" id="contact" aria-labelledby="contact-heading">
       <div class="container">
         <header class="section-header">
-          <p class="section-kicker">06</p>
+          <p class="section-kicker">04</p>
           <h2 class="section-title" id="contact-heading">Contact</h2>
           <p class="section-lede">[Add: the fastest way to reach you and your response time.]</p>
         </header>

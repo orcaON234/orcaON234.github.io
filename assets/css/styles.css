@@ -12,15 +12,13 @@
    7.  Hero
    8.  Sections
    9.  About
-   10. Skills
+   10. Tech stack
    11. Projects
-   12. Timeline (experience)
-   13. Education
-   14. Contact
-   15. Footer
-   16. Responsive
-   17. Reduced motion
-   18. Print stylesheet
+   12. Contact
+   13. Footer
+   14. Responsive
+   15. Reduced motion
+   16. Print stylesheet
    ========================================================================== */
 
 
@@ -184,15 +182,6 @@ p { color: var(--color-ink-soft); }
   text-transform: uppercase;
   color: var(--color-accent);
   margin-bottom: var(--space-3);
-}
-
-.subheading {
-  font-size: var(--text-sm);
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: var(--color-ink-faint);
-  margin: var(--space-5) 0 var(--space-3);
 }
 
 /* Placeholder text sits in brackets so it is obvious what to replace */
@@ -608,8 +597,6 @@ p { color: var(--color-ink-soft); }
 
 .fact-list { display: grid; gap: var(--space-4); }
 
-.fact-list--compact { gap: var(--space-3); margin-top: var(--space-4); }
-
 .fact dt {
   font-size: var(--text-xs);
   font-weight: 600;
@@ -625,9 +612,53 @@ p { color: var(--color-ink-soft); }
   margin: 0;
 }
 
+/* The "Full history" fact links out to the resume PDF */
+.fact dd a {
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.fact dd a:hover { text-decoration: underline; }
+
+/* Shared entry typography — used by the about facts and the hero */
+.entry-head { margin-bottom: var(--space-4); }
+
+.entry-title {
+  font-size: var(--text-lg);
+  margin-bottom: var(--space-1);
+}
+
+.entry-org {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-ink);
+}
+
+.entry-dates {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-ink-faint);
+  margin-top: var(--space-1);
+}
+
+.entry-points {
+  display: grid;
+  gap: var(--space-2);
+  margin-bottom: var(--space-4);
+  padding-left: var(--space-5);
+  list-style: disc;
+}
+
+.entry-points li {
+  font-size: var(--text-sm);
+  padding-left: var(--space-1);
+}
+
+.entry-points li::marker { color: var(--color-accent); }
+
 
 /* ==========================================================================
-   10. Skills
+   10. Tech stack
    ========================================================================== */
 .skills-grid {
   display: grid;
@@ -853,104 +884,7 @@ p { color: var(--color-ink-soft); }
 
 
 /* ==========================================================================
-   12. Timeline (experience)
-   ========================================================================== */
-.timeline {
-  list-style: none;
-  display: grid;
-  gap: var(--space-6);
-}
-
-.timeline-item {
-  position: relative;
-  display: grid;
-  grid-template-columns: 28px minmax(0, 1fr);
-  gap: var(--space-4);
-}
-
-/* The vertical rail */
-.timeline-item::before {
-  content: "";
-  position: absolute;
-  left: 13px;
-  top: 22px;
-  bottom: calc(-1 * var(--space-6));
-  width: 2px;
-  background-color: var(--color-border);
-}
-
-.timeline-item:last-child::before { display: none; }
-
-.timeline-marker {
-  position: relative;
-  z-index: 1;
-  width: 14px;
-  height: 14px;
-  margin-top: 6px;
-  margin-left: 7px;
-  border-radius: 50%;
-  background-color: var(--color-surface);
-  border: 3px solid var(--color-accent);
-}
-
-.timeline-body {
-  padding: var(--space-5);
-  background-color: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-sm);
-}
-
-.entry-head { margin-bottom: var(--space-4); }
-
-.entry-title {
-  font-size: var(--text-lg);
-  margin-bottom: var(--space-1);
-}
-
-.entry-org {
-  font-size: var(--text-sm);
-  font-weight: 600;
-  color: var(--color-ink);
-}
-
-.entry-dates {
-  font-family: var(--font-mono);
-  font-size: var(--text-xs);
-  color: var(--color-ink-faint);
-  margin-top: var(--space-1);
-}
-
-.entry-points {
-  display: grid;
-  gap: var(--space-2);
-  margin-bottom: var(--space-4);
-  padding-left: var(--space-5);
-  list-style: disc;
-}
-
-.entry-points li {
-  font-size: var(--text-sm);
-  padding-left: var(--space-1);
-}
-
-.entry-points li::marker { color: var(--color-accent); }
-
-
-/* ==========================================================================
-   13. Education
-   ========================================================================== */
-.education-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: var(--space-5);
-}
-
-.education-card { padding: var(--space-5); }
-
-
-/* ==========================================================================
-   14. Contact
+   12. Contact
    ========================================================================== */
 .contact-grid {
   display: grid;
@@ -1002,7 +936,7 @@ p { color: var(--color-ink-soft); }
 
 
 /* ==========================================================================
-   15. Footer
+   13. Footer
    ========================================================================== */
 .site-footer {
   padding-block: var(--space-6);
@@ -1042,7 +976,7 @@ p { color: var(--color-ink-soft); }
 
 
 /* ==========================================================================
-   16. Responsive
+   14. Responsive
    ========================================================================== */
 @media (max-width: 900px) {
   .hero-inner {
@@ -1124,16 +1058,12 @@ p { color: var(--color-ink-soft); }
 
   .hero-links { gap: var(--space-4); }
 
-  .timeline-item { grid-template-columns: 20px minmax(0, 1fr); }
-
-  .timeline-marker { margin-left: 3px; }
-
-  .timeline-item::before { left: 9px; }
+  .about-facts { padding: var(--space-4); }
 }
 
 
 /* ==========================================================================
-   17. Reduced motion
+   15. Reduced motion
    ========================================================================== */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
@@ -1153,7 +1083,7 @@ p { color: var(--color-ink-soft); }
 
 
 /* ==========================================================================
-   18. Print stylesheet
+   16. Print stylesheet
    Recruiters who hit Ctrl+P get a clean, ink-light one-pager.
    ========================================================================== */
 @media print {
@@ -1244,7 +1174,6 @@ p { color: var(--color-ink-soft); }
   /* Lay out cards in a tight two-up grid for paper */
   .skills-grid,
   .projects-grid,
-  .education-grid,
   .contact-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -1253,7 +1182,6 @@ p { color: var(--color-ink-soft); }
 
   .card,
   .skill-group,
-  .timeline-body,
   .about-facts,
   .contact-card {
     border: 1px solid #ccc;
@@ -1276,17 +1204,15 @@ p { color: var(--color-ink-soft); }
 
   .chip-list { gap: 0 4pt; }
 
-  .timeline-item::before,
-  .timeline-marker { display: none; }
-
-  .timeline-item {
-    grid-template-columns: 1fr;
-    break-inside: avoid;
-  }
-
   a { color: #000; text-decoration: none; }
 
   /* Make sure links are still usable from a printed page */
-  .contact-value,
-  .entry-org { font-weight: 700; }
+  .contact-value { font-weight: 700; }
+
+  /* The resume link should print as a visible URL, not a dead anchor */
+  .fact dd a::after {
+    content: " (orcaon234.github.io/assets/Ocean-Ng-Resume.pdf)";
+    font-size: 8pt;
+    font-weight: 400;
+  }
 }

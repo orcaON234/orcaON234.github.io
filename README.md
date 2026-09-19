@@ -54,6 +54,29 @@ Then, optionally, enable **Enforce HTTPS** on the same Pages settings screen.
 
 ---
 
+## Scope: this complements the résumé, it does not repeat it
+
+Deliberate design decision — the page covers **tech stack, research, and projects only**:
+
+| On this page | On the résumé |
+| :--- | :--- |
+| Grouped tech stack (chips) | One-line skills list |
+| Projects, pulled live from GitHub | Selected projects, trimmed |
+| Research interests and technical depth | Work history, dates, titles |
+| — | Education, GPA, coursework, honors |
+| — | Awards, certifications |
+
+There is **no Experience or Education section**, on purpose. A recruiter already has your
+résumé; duplicating it here spends the ten seconds they will actually give this page. Instead,
+the About panel carries a single **"Full history → See résumé (PDF)"** link for anyone who
+wants the chronology.
+
+If you later want a work-history block back, add a `<section class="section section--alt"
+id="experience">` plus a matching nav link — the timeline CSS was removed in this cleanup, so
+you would be writing those styles fresh.
+
+---
+
 ## What to edit before you share the link
 
 Everything visible is a labelled placeholder. Search for `[Add:` to find every one.
@@ -62,9 +85,10 @@ Everything visible is a labelled placeholder. Search for `[Add:` to find every o
 | :--- | :--- | :--- |
 | Page title, meta description, social preview | `index.html` `<head>` | Shown in the browser tab, Google results, and link previews |
 | Headline, pitch, quick facts | `index.html` → hero + `#about` | |
-| Résumé PDF | `assets/Ocean-Ng-Resume.pdf` | Drop your PDF here with that exact name, or update both `href`s (hero + contact) |
+| Résumé PDF | `assets/Ocean-Ng-Resume.pdf` | Drop your PDF here with that exact name, or update all three `href`s (hero, About panel, contact) |
 | **Your tech stack** | `assets/js/main.js` → `SKILL_GROUPS` | Single source of truth — the chips render from this array |
 | Project card ordering / exclusions | `assets/js/main.js` → `FEATURED_REPOS`, `EXCLUDED_REPOS` | Featured repos list first, in your order |
+| Project descriptions | `assets/js/main.js` → `REPO_DESCRIPTIONS` | Falls back to the repo's GitHub description |
 | GitHub username | `assets/js/main.js` → `GITHUB_USERNAME` | Only change if you fork this |
 | Headshot | `assets/img/portrait.jpg` | See the comment in the hero; swap the placeholder div for the `<img>` |
 | Favicon | `assets/img/favicon.png` | 32×32 PNG is fine |
@@ -77,9 +101,10 @@ Everything visible is a labelled placeholder. Search for `[Add:` to find every o
 
 ```
 orcaON234.github.io/
-├── index.html                 # the page: hero, about, skills, projects, experience, education, contact
+├── index.html                 # the page: hero, about, tech stack, projects, contact
 ├── 404.html                   # custom not-found page
 ├── .nojekyll                  # disables Jekyll on GitHub Pages — do not delete
+├── .gitattributes             # pins LF line endings in the repo, regardless of local config
 ├── .gitignore
 ├── README.md
 └── assets/
@@ -112,8 +137,9 @@ Behaviour worth knowing:
   **60 requests per hour per IP**, so this keeps you well clear of the limit.
 - **If the API fails**, a notice appears and the skeletons are cleared — the section never
   breaks the rest of the page.
-- **Repo descriptions come from GitHub**, not this file. Fill in each repo's *About* field on
-  GitHub; cards with no description show a reminder placeholder.
+- **Repo descriptions**: a hand-written entry in `REPO_DESCRIPTIONS` wins, then the repo's own
+  GitHub *About* text, then a reminder placeholder. Filling in *About* on GitHub is the better
+  long-term habit since it also improves your GitHub profile.
 
 Prefer to hand-curate instead of auto-pulling? Comment out the `SKILL_GROUPS`-style API block
 and use the static card template that is already commented out in `index.html` under
